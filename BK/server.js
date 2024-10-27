@@ -19,6 +19,11 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
+// Root Route
+app.get('/', (req, res) => {
+  res.send('Welcome to the Datalytics API!');
+});
+
 // User Schema
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
