@@ -1,0 +1,83 @@
+/* General container styling */
+.events-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Section Styling */
+.events-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.events-header h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Event Grid Layout - 2 Columns */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  grid-gap: 20px; /* Spacing between cards */
+}
+
+/* Event card layout */
+.event-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Event image */
+.event-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.responsive-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensures the image covers the area */
+  border-radius: 8px;
+}
+
+/* Event details */
+.event-details {
+  text-align: left;
+}
+
+.event-details h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.event-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* No events and error messages */
+.no-events, .error-message {
+  text-align: center;
+  color: #777;
+  font-size: 1.2em;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .event-grid {
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
+  }
+}

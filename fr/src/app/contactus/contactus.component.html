@@ -1,0 +1,40 @@
+<div class="container">
+  <h2>User Roles by Year Range</h2>
+
+  <!-- Dropdown to select Year Range -->
+  <label for="yearRangeSelect">Select Year Range:</label>
+  <select id="yearRangeSelect" [(ngModel)]="selectedYearRange" (change)="fetchUsers()">
+    <option value="">Select a Year Range</option>
+    <option *ngFor="let range of yearRanges" [value]="range">{{ range }}</option>
+  </select>
+
+  <!-- Button to navigate to the Dashboard -->
+  <button (click)="navigateToDashboard()">Go to Dashboard</button>
+
+  <!-- Display error message if present -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Display users for selected year range only -->
+  <div *ngIf="!errorMessage && selectedYearRange">
+    <h3>{{ selectedYearRange }}</h3>
+    <ul *ngIf="categorizedUsers[selectedYearRange] && categorizedUsers[selectedYearRange].length > 0">
+      <li *ngFor="let user of categorizedUsers[selectedYearRange]">
+        <strong>Username:</strong> {{ user.username }}<br>
+        <strong>Email:</strong> {{ user.email }}<br>
+        <strong>Department:</strong> {{ user.department }}<br>
+        <strong>Role:</strong> {{ user.role }}<br>
+        <hr>
+      </li>
+    </ul>
+    <p *ngIf="categorizedUsers[selectedYearRange] && categorizedUsers[selectedYearRange].length === 0">
+      No users in this range.
+    </p>
+  </div>
+
+  <!-- Message if no range is selected -->
+  <div *ngIf="!errorMessage && !selectedYearRange">
+    <p>Please select a year range to display users.</p>
+  </div>
+</div>
