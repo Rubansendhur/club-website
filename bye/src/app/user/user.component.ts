@@ -47,7 +47,7 @@ export class UserComponent implements OnInit {
   }
 
   fetchUsers(): void {
-    const apiUrl = 'http://localhost:5000/api/users';
+    const apiUrl = 'https://club-website-gice.onrender.com/api/users';
   
     this.http.get<{ message: string; users: User[] }>(apiUrl).subscribe({
       next: (data) => {

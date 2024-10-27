@@ -37,7 +37,7 @@ export class UserRoleFetchComponent implements OnInit {
 
   // Method to fetch users from API
   fetchUsers(): void {
-    const apiUrl = 'http://localhost:5000/api/userRoles';
+    const apiUrl = 'https://club-website-gice.onrender.com/api/userRoles';
 
     this.http.get<{ message: string; userRoles: User[] }>(apiUrl).subscribe({
       next: (data) => {
@@ -81,7 +81,7 @@ export class UserRoleFetchComponent implements OnInit {
 
   // Method to delete a user
   deleteUser(userId: string): void {
-    const deleteUrl = `http://localhost:5000/api/userRoles/${userId}`;
+    const deleteUrl = `https://club-website-gice.onrender.com/api/userRoles/${userId}`;
     this.http.delete<{ message: string }>(deleteUrl).subscribe({
       next: () => {
         this.fetchUsers(); // Refresh the list after deletion

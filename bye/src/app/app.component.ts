@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
   imports: [HttpClientModule, SignupComponent, DashboardComponent, RouterModule],
   template: `
     <div>
-      <h1>Welcome to Our Application</h1>
+      <h1></h1>
       
       <router-outlet></router-outlet>
     </div>
