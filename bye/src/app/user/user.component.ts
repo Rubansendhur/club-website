@@ -64,7 +64,7 @@ export class UserComponent implements OnInit {
     });
   }
   deleteUser (userId: string): void {
-    const deleteUrl = `http://localhost:5000/api/users/${userId}`; // API URL for deleting a user
+    const deleteUrl = `https://club-website-gice.onrender.com/api/users/${userId}`; // API URL for deleting a user
 
     this.http.delete<{ message: string }>(deleteUrl).subscribe({
       next: () => {
@@ -80,7 +80,7 @@ export class UserComponent implements OnInit {
   
   // Update insertUser to send createdAt
   insertUser(): void {
-    const apiUrl = 'http://localhost:5000/api/addUserRole';
+    const apiUrl = 'https://club-website-gice.onrender.com/api/addUserRole';
     this.newUser.createdAt = new Date(); // Add the current date as createdAt
   
     this.http.post<{ message: string }>(apiUrl, this.newUser).subscribe({
