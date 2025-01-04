@@ -37,7 +37,7 @@ export class ContactusComponent implements OnInit {
 
   // Method to fetch users from API
   async fetchUsers(): Promise<void> {
-    const apiUrl = 'http://localhost:5000/api/userRoles';
+    const apiUrl = 'https://club-website-gice.onrender.com/api/userRoles';
 
     try {
       const data = await this.http.get<{ message: string; userRoles: User[] }>(apiUrl).toPromise();
